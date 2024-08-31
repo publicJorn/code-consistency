@@ -1,0 +1,17 @@
+{
+  "name": "@publicjorn/prettier-config",
+  "version": "0.1.0",
+  "description": "Shareable prettier config.",
+  "author": "Jorn Luiten",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/publicJorn/code-consistency.git"
+  },
+  "homepage": "https://github.com/publicJorn/code-consistency/packages/prettier-config#readme",
+  "bugs": {
+    "url": "https://github.com/publicJorn/code-consistency/issues"
+  },
+  "main": "index.json",
+  "scripts": {},
+  "license": "See licence file at: https://github.com/publicJorn/code-consistency"
+}
