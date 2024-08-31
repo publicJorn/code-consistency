@@ -6,13 +6,10 @@
   "private": "true",
   "scripts": {
     "bump": "lerna version",
-    "publish": "lerna publish --no-private",
+    "publish-packages": "lerna publish --no-private",
     "prepare": "husky",
     "commitlint": "commitlint --edit"
   },
-  "workspaces": [
-    "packages/*"
-  ],
   "prettier": "./packages/prettier-config",
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
