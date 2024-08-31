@@ -1,7 +1,7 @@
 # Code Consistency
 
 Provides configs and docs to promote and enforce code consistency between projects.  
-This project is based on similar work I did for [IGNE agency]() in order to have my own config and learn more about the npm publishing process.
+This project is based on similar work I did for [IGNE agency](https://github.com/IGNE-Agency/code-consistency) in order to have my own config and learn more about the npm publishing process.
 
 - [eslint config](./packages/eslint-config)
 - [prettier config](./packages/prettier-config)
