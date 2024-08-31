@@ -1,5 +1,5 @@
 {
-  "name": "@publicjorn/prettier-config",
+  "name": "@devjorn/prettier-config",
   "version": "0.1.0",
   "description": "Shareable prettier config.",
   "author": "Jorn Luiten",
