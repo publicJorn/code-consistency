@@ -13,7 +13,7 @@
   "workspaces": [
     "packages/*"
   ],
-  "prettier": "./packages/prettier-jorn",
+  "prettier": "./packages/prettier-config",
   "devDependencies": {
     "@commitlint/cli": "^19.3.0",
     "@commitlint/config-angular": "^19.3.0",
