@@ -5,6 +5,7 @@
   "author": "Jorn Luiten",
   "private": "true",
   "scripts": {
+    "bump": "lerna version",
     "publish": "lerna publish --no-private",
     "prepare": "husky",
     "commitlint": "commitlint --edit"
