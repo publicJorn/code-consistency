@@ -7,7 +7,7 @@
     "type": "git",
     "url": "git+https://github.com/publicJorn/code-consistency.git"
   },
-  "homepage": "https://github.com/publicJorn/code-consistency/packages/prettier-config#readme",
+  "homepage": "https://github.com/publicJorn/code-consistency/tree/main/packages/prettier-config",
   "bugs": {
     "url": "https://github.com/publicJorn/code-consistency/issues"
   },

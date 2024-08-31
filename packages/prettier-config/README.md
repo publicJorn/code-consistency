@@ -16,7 +16,7 @@ Add prettier to `package.json`:
 "prettier": "@publicjorn/prettier-config",
 ```
 
-Add a script to run prettier in :
+Add a script to run prettier from command line:
 
 ```json
 "scripts": {
