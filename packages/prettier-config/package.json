@@ -12,6 +12,9 @@
     "url": "https://github.com/publicJorn/code-consistency/issues"
   },
   "main": "index.json",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {},
   "license": "See licence file at: https://github.com/publicJorn/code-consistency"
 }

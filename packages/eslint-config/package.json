@@ -12,6 +12,9 @@
     "url": "https://github.com/publicJorn/code-consistency/issues"
   },
   "main": "index.js",
+  "publishConfig": {
+    "access": "public"
+  },
   "scripts": {},
   "dependencies": {
     "@typescript-eslint/parser": "^5.4.2 || ^6.0.0 || 7.0.0 - 7.2.0",
