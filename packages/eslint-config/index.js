@@ -17,6 +17,10 @@ module.exports = {
   ],
   plugins: ["react", "react-hooks", "simple-import-sort", "import", "prettier"],
   ignorePatterns: ["dist", ".eslintrc.cjs", "package.json", "*-lock.json"],
+  globals: {
+    React: true,
+    JSX: true,
+  },
   parserOptions: {
     ecmaVersion: "latest",
     sourceType: "module",
