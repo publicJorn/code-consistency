@@ -5,6 +5,7 @@
   "author": "Jorn Luiten",
   "private": "true",
   "scripts": {
+    "release": "changesets publish",
     "bump": "lerna version",
     "publish-packages": "lerna publish --no-private",
     "prepare": "husky",
