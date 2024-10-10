@@ -15,8 +15,8 @@ Add `.eslintrc.cjs` to your project root:
 ```js
 module.exports = {
   root: true,
-  extends: "@publicjorn/eslint-config",
-};
+  extends: '@publicjorn/eslint-config',
+}
 ```
 
 Add a script in `package.json` to lint:
@@ -68,7 +68,9 @@ You can disable it in your (workspace) settings with:
 
 ## TODO
 
+- Add `"globals": { "React": true, "JSX": true }` to config - used commonly for types in .tsx files
 - Test the current TS implementation (overrides) in a Vite TS project
+  - It works when adding `plugin:@typescript-eslint/recommended`
 - `eslint-plugin-simple-import-sort`
 - Make stack specific exports: Expo, NextJS, (and typescript for each as well)
 
@@ -83,4 +85,4 @@ The following packages do not support flat config, that is why we are not using 
 - eslint-plugin-import
 - eslint-import-resolver-node
 - eslint-import-resolver-typescript
-- eslint-plugin-react (almost - https://github.com/facebook/react/pull/28773#issuecomment-2147149016)
+- eslint-plugin-react (with react 19, but workaround: https://github.com/facebook/react/issues/28313#issuecomment-2400728604)
