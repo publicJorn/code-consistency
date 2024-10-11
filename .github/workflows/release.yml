@@ -35,7 +35,7 @@ jobs:
         with:
           publish: pnpm release
           title: Ready for release
-          commit: Version packages (changesets action)
+          commit: Version & release packages (action)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
