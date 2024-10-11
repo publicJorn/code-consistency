@@ -5,8 +5,8 @@
   "author": "Jorn Luiten",
   "private": "true",
   "scripts": {
-    "bump": "changesets version",
-    "release": "changesets publish"
+    "bump": "changeset version",
+    "release": "changeset publish"
   },
   "prettier": "./packages/prettier-config",
   "devDependencies": {
