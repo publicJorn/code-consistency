@@ -5,19 +5,12 @@
   "author": "Jorn Luiten",
   "private": "true",
   "scripts": {
-    "release": "changesets publish",
-    "bump": "lerna version",
-    "publish-packages": "lerna publish --no-private",
-    "prepare": "husky",
-    "commitlint": "commitlint --edit"
+    "version": "changesets version",
+    "release": "changesets publish"
   },
   "prettier": "./packages/prettier-config",
   "devDependencies": {
     "@changesets/cli": "2.27.7",
-    "@commitlint/cli": "^19.3.0",
-    "@commitlint/config-angular": "^19.3.0",
-    "husky": "^9.0.11",
-    "lerna": "^8.1.3",
     "prettier": "^3.3.2"
   }
 }
