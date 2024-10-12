@@ -1,59 +1,59 @@
-const rulesGeneric = require("./rules/generic");
-const rulesReact = require("./rules/react");
-const rulesImportSort = require("./rules/importSort");
-const rulesImport = require("./rules/import");
+const rulesGeneric = require('./rules/generic')
+const rulesReact = require('./rules/react')
+const rulesImportSort = require('./rules/importSort')
+const rulesImport = require('./rules/import')
 
 module.exports = {
   env: {
     browser: true,
-    es2020: true, // Can be different per project
+    es2022: true, // Can be different per project
   },
   extends: [
-    "eslint:recommended",
-    "plugin:react/recommended",
-    "plugin:react/jsx-runtime",
-    "plugin:react-hooks/recommended",
-    "prettier",
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
+    'prettier',
   ],
-  plugins: ["react", "react-hooks", "simple-import-sort", "import", "prettier"],
-  ignorePatterns: ["dist", ".eslintrc.cjs", "package.json", "*-lock.json"],
-  globals: {
-    React: true,
-    JSX: true,
-  },
+  plugins: ['react', 'react-hooks', 'simple-import-sort', 'import', 'prettier'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'package.json', '*-lock.json'],
   parserOptions: {
-    ecmaVersion: "latest",
-    sourceType: "module",
+    ecmaVersion: 'latest',
+    sourceType: 'module',
   },
   settings: {
     react: {
-      version: "detect",
+      version: 'detect',
     },
-    "import/parsers": {
-      [require.resolve("@typescript-eslint/parser")]: [".ts", ".mts", ".cts", ".tsx", ".d.ts"],
+    'import/parsers': {
+      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.mts', '.cts', '.tsx', '.d.ts'],
     },
-    "import/resolver": {
-      [require.resolve("eslint-import-resolver-node")]: {
-        extensions: [".js", ".jsx", ".ts", ".tsx"],
+    'import/resolver': {
+      [require.resolve('eslint-import-resolver-node')]: {
+        extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
-      [require.resolve("eslint-import-resolver-typescript")]: {
+      [require.resolve('eslint-import-resolver-typescript')]: {
         alwaysTryTypes: true,
       },
     },
   },
 
   overrides: [
-    { files: ["**/*.js?(x)"] },
     {
-      files: ["**/*.ts?(x)"],
-      parser: "@typescript-eslint/parser",
+      files: ['**/*.ts?(x)'],
+      parser: '@typescript-eslint/parser',
       parserOptions: {
-        sourceType: "module",
+        sourceType: 'module',
         ecmaFeatures: {
           jsx: true,
         },
         warnOnUnsupportedTypeScriptVersion: true,
       },
+      globals: {
+        React: true,
+        JSX: true,
+      },
+      extends: ['plugin:@typescript-eslint/recommended'],
     },
   ],
 
@@ -63,4 +63,4 @@ module.exports = {
     ...rulesImportSort,
     ...rulesImport,
   },
-};
+}
