@@ -82,7 +82,8 @@ Investigate:
 
 The following packages do not support flat config, that is why we are not using eslint 9 yet:
 
-- eslint-plugin-import
-- eslint-import-resolver-node
-- eslint-import-resolver-typescript
+- eslint-plugin-import √
+- eslint-import-resolver-node √
+- eslint-import-resolver-typescript √
+- eslint-plugin-simple-import-sort ?
 - eslint-plugin-react (with react 19, but workaround: https://github.com/facebook/react/issues/28313#issuecomment-2400728604)

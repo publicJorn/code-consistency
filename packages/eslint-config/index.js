@@ -1,8 +1,3 @@
-const rulesGeneric = require('./rules/generic')
-const rulesReact = require('./rules/react')
-const rulesImportSort = require('./rules/importSort')
-const rulesImport = require('./rules/import')
-
 module.exports = {
   env: {
     browser: true,
@@ -10,12 +5,12 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    'plugin:react/recommended',
-    'plugin:react/jsx-runtime',
-    'plugin:react-hooks/recommended',
+    './settings/generic.js',
+    './settings/react.js',
+    './settings/import.js',
     'prettier',
   ],
-  plugins: ['react', 'react-hooks', 'simple-import-sort', 'import', 'prettier'],
+  plugins: ['prettier'],
   ignorePatterns: ['dist', '.eslintrc.cjs', 'package.json', '*-lock.json'],
   parserOptions: {
     ecmaVersion: 'latest',
@@ -25,19 +20,7 @@ module.exports = {
     react: {
       version: 'detect',
     },
-    'import/parsers': {
-      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.mts', '.cts', '.tsx', '.d.ts'],
-    },
-    'import/resolver': {
-      [require.resolve('eslint-import-resolver-node')]: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-      [require.resolve('eslint-import-resolver-typescript')]: {
-        alwaysTryTypes: true,
-      },
-    },
   },
-
   overrides: [
     {
       files: ['**/*.ts?(x)'],
@@ -56,11 +39,4 @@ module.exports = {
       extends: ['plugin:@typescript-eslint/recommended'],
     },
   ],
-
-  rules: {
-    ...rulesGeneric,
-    ...rulesReact,
-    ...rulesImportSort,
-    ...rulesImport,
-  },
 }
