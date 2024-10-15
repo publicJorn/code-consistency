@@ -5,9 +5,9 @@ module.exports = {
   },
   extends: [
     'eslint:recommended',
-    './settings/generic.js',
-    './settings/react.js',
-    './settings/import.js',
+    './configs/generic.js',
+    './configs/react.js',
+    './configs/import.js',
     'prettier',
   ],
   plugins: ['prettier'],

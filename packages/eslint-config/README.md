@@ -80,10 +80,18 @@ Investigate:
 
 ### About flat config
 
-The following packages do not support flat config, that is why we are not using eslint 9 yet:
+Our main eslint config is almost ready to be rewritten to flat config (required for eslint 9).  
+The following packages need special attention when upgrading.
 
-- eslint-plugin-import √
-- eslint-import-resolver-node √
-- eslint-import-resolver-typescript √
 - eslint-plugin-simple-import-sort ?
 - eslint-plugin-react (with react 19, but workaround: https://github.com/facebook/react/issues/28313#issuecomment-2400728604)
+
+Also, project flavor specific versions of our config are now ready for eslint 9 yet. But they could still use the main eslint config.
+
+- Expo eslint plugin does not support flat config or eslint 9 - - https://github.com/expo/expo/blob/main/packages/eslint-plugin-expo/README.md
+- Nextjs eslint plugin does not support flat config or eslint 9 - https://github.com/vercel/next.js/issues/64409 - https://github.com/vercel/next.js/blob/canary/packages/eslint-plugin-next/README.md
+
+For reference and examples of flat config see:
+
+- official vite eslint configs: [js](https://github.com/vitejs/vite/blob/main/packages/create-vite/template-react/eslint.config.js) or [ts](https://github.com/vitejs/vite/blob/main/packages/create-vite/template-react-ts/eslint.config.js)
+- [typescript-eslint docs](https://typescript-eslint.io/packages/typescript-eslint#usage-with-other-plugins)
