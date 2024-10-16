@@ -1,25 +1,34 @@
-module.exports = {
-  plugins: ['simple-import-sort', 'import'],
-  settings: {
-    'import/parsers': {
-      [require.resolve('@typescript-eslint/parser')]: ['.ts', '.mts', '.cts', '.tsx', '.d.ts'],
-    },
-    'import/resolver': {
-      [require.resolve('eslint-import-resolver-node')]: {
-        extensions: ['.js', '.jsx', '.ts', '.tsx'],
-      },
-      [require.resolve('eslint-import-resolver-typescript')]: {
-        alwaysTryTypes: true,
-      },
-    },
-  },
-  rules: {
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
+import importPlugin from 'eslint-plugin-import'
+import simpleImportSort from 'eslint-plugin-simple-import-sort'
 
-    'import/no-anonymous-default-export': 'warn',
-    'import/first': 'error',
-    'import/newline-after-import': 'error',
-    'import/no-duplicates': 'error',
-  },
+const tsImportConfig = importPlugin.flatConfigs.typescript
+tsImportConfig.settings['import/resolver'].typescript = {
+  alwaysTryTypes: true,
 }
+
+// importPlugin for correctness and simpleImportSort for.. sorting.
+export const configImport = [
+  importPlugin.flatConfigs.recommended,
+
+  {
+    name: 'import/typescript',
+    ...tsImportConfig,
+  },
+
+  {
+    name: 'devJorn/imports',
+    plugins: {
+      'simple-import-sort': simpleImportSort,
+    },
+
+    rules: {
+      'import/no-anonymous-default-export': 'warn',
+      'import/first': 'error',
+      'import/newline-after-import': 'error',
+      'import/no-duplicates': 'error',
+
+      'simple-import-sort/imports': 'error',
+      'simple-import-sort/exports': 'error',
+    },
+  },
+]

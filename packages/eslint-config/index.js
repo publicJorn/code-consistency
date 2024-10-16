@@ -1,42 +1,56 @@
-module.exports = {
-  env: {
-    browser: true,
-    es2022: true, // Can be different per project
-  },
-  extends: [
-    'eslint:recommended',
-    './configs/generic.js',
-    './configs/react.js',
-    './configs/import.js',
-    'prettier',
-  ],
-  plugins: ['prettier'],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'package.json', '*-lock.json'],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
-  settings: {
-    react: {
-      version: 'detect',
-    },
-  },
-  overrides: [
-    {
-      files: ['**/*.ts?(x)'],
-      parser: '@typescript-eslint/parser',
-      parserOptions: {
-        sourceType: 'module',
-        ecmaFeatures: {
-          jsx: true,
-        },
-        warnOnUnsupportedTypeScriptVersion: true,
-      },
+import eslint from '@eslint/js'
+import globals from 'globals'
+import tseslint from 'typescript-eslint'
+
+import { configGeneric } from './configs/generic.js'
+import { configImport } from './configs/import.js'
+import { configPrettier } from './configs/prettier.js'
+import { configReact } from './configs/react.js'
+
+export const eslintConfigDefault = [
+  {
+    name: 'devJorn/default',
+    files: ['**/*.js?(x)', '**/*.ts?(x)'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       globals: {
-        React: true,
-        JSX: true,
+        ...globals.browser,
+        ...globals.es2022, // Can be different per project
       },
-      extends: ['plugin:@typescript-eslint/recommended'],
     },
-  ],
-}
+    ignores: ['**/dist/**', 'package.json', '*-lock.json'],
+  },
+
+  {
+    name: 'eslint/recommended',
+    ...eslint.configs.recommended,
+  },
+
+  ...configGeneric,
+  ...configReact,
+  ...configImport,
+
+  // eslint-disable-next-line import/no-named-as-default-member
+  ...tseslint.configs.recommended,
+
+  ...configPrettier,
+]
+
+export const eslintConfigExpo = [
+  {
+    name: 'devJorn/expo',
+    files: ['**/*.js?(x)', '**/*.ts?(x)'],
+    languageOptions: {
+      ecmaVersion: 'latest',
+      sourceType: 'module',
+      globals: {
+        ...globals.node,
+        ...globals.es2022, // Can be different per project
+      },
+    },
+    ignores: ['**/dist/**', 'package.json', '*-lock.json'],
+  },
+
+  ...eslintConfigDefault.slice(1),
+]
