@@ -38,7 +38,7 @@ jobs:
           commit: Version & release packages (action)
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.DEVJORN_AUTOMATION }}
+          NPM_TOKEN_SCOPE_DEVJORN: ${{ secrets.DEVJORN_AUTOMATION }}
 
       # - name: Send a Slack notification if a publish happens
       #   if: steps.changesets.outputs.published == 'true'
