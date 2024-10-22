@@ -1,4 +1,6 @@
 // Should have no errors
+import { Hi } from '@/hi'
+
 type AllHeadingProps = React.ComponentPropsWithoutRef<'h1'> & {
   semanticLevel: 1 | 2 | 3 | 4 | 5 | 6
   size?: 1 | 2 | 3 | 4 | 5 | 6
@@ -16,7 +18,7 @@ export const Heading = ({
 
   return (
     <Hx className={`${headingSize} ${className}`} {...props}>
-      {children}
+      <Hi /> {children}
     </Hx>
   )
 }

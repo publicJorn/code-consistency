@@ -4,18 +4,20 @@ Currently contains config that can be used for SPA projects, made with Vite or C
 
 ## Setting up
 
-Once for a project.
+> Once for a project.
 
 ```
 npm i -D eslint @devjorn/eslint-config
 ```
 
-Make sure that your project has `type: "module"` in `package.json`.
+Make sure that your project has `type: "module"` in `package.json`.  
+Also tsconfig file name(s) should be `tsconfig.json` or `tsconfig.*.json` for import linting to work.
 
 Add `eslint.config.js` to your project root:
 
 ```js
 import { eslintConfigDefault } from '@devjorn/eslint-config'
+
 const config = [...eslintConfigDefault]
 export default config
 ```
@@ -33,6 +35,7 @@ It is possible to exclude files or folders by adding an object with the `ignores
 
 ```js
 import { eslintConfigDefault } from '@devjorn/eslint-config'
+
 const config = [
   { ignores: ['eslint.config.js', 'test/**'] },
   ...eslintConfigDefault
@@ -44,7 +47,7 @@ Make sure to add a step to the pipeline of your project that runs this script, s
 
 ## Editor integration
 
-For every developer.
+> For every developer.
 
 ### VSCode
 

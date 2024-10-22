@@ -9,7 +9,12 @@ import { configReact } from './configs/react.js'
 
 export const eslintConfigDefault = [
   {
-    name: 'devJorn/default',
+    name: 'devJorn/default-ignores',
+    ignores: ['**/dist/**', 'package.json', '*-lock.json'],
+  },
+
+  {
+    name: 'devJorn/default-language-options',
     files: ['**/*.js?(x)', '**/*.ts?(x)'],
     languageOptions: {
       ecmaVersion: 'latest',
@@ -19,7 +24,16 @@ export const eslintConfigDefault = [
         ...globals.es2022, // Can be different per project
       },
     },
-    ignores: ['**/dist/**', 'package.json', '*-lock.json'],
+  },
+
+  {
+    name: 'devJorn/cjs-globals',
+    files: ['**/*.cjs'],
+    languageOptions: {
+      globals: {
+        ...globals.node,
+      },
+    },
   },
 
   {
@@ -30,10 +44,8 @@ export const eslintConfigDefault = [
   ...configGeneric,
   ...configReact,
   ...configImport,
-
   // eslint-disable-next-line import/no-named-as-default-member
   ...tseslint.configs.recommended,
-
   ...configPrettier,
 ]
 
